@@ -13,14 +13,7 @@ defmodule Chump.Web.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", Chump.Web do
-    pipe_through :browser # Use the default browser stack
+  forward "/api", Absinthe.Plug, schema: Chump.Web.Schema
+  forward "/graphiql", Absinthe.Plug.GraphiQL, schema: Chump.Web.Schema
 
-    get "/", PageController, :index
-  end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", Chump.Web do
-  #   pipe_through :api
-  # end
 end

@@ -26,15 +26,22 @@ defmodule Chump.Character.Sheet do
       attributes: [
         ~x"./attributes/attribute"l,
         name: ~x"./name/text()"s,
-        metatypemin: ~x"./metatypemin/text()"i,
-        metatypemax: ~x"./metatypemin/text()"i,
-        metatypeaugmax: ~x"./metatypemin/text()"i,
+        metatype_min: ~x"./metatypemin/text()"i,
+        metatype_max: ~x"./metatypemin/text()"i,
+        metatype_aug_max: ~x"./metatypemin/text()"i,
         value: ~x"./value/text()"i,
-        augmodifier: ~x"./value/text()"i,
-        totalvalue: ~x"./totalvalue/text()"i,
+        aug_modifier: ~x"./value/text()"i,
+        total_value: ~x"./totalvalue/text()"i,
+      ],
+      skill_groups: [
+        ~x"./skillgroups/skillgroup"l,
+        name: ~x"./name/text()"s,
+        rating: ~x"./rating/text()"i,
+        rating_max: ~x"./ratingmax/text()"i,
+        is_broken: ~x"./broken/text()"s,
       ],
       alias: ~x"./alias/text()"s,
-      appversion: ~x"./appversion/text()"i
+      app_version: ~x"./appversion/text()"i
     )
   end
 
