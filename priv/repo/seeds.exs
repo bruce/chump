@@ -9,3 +9,10 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
+
+for path <- Path.wildcard("priv/repo/seeds/sheets/*.chum") do
+  name = Path.basename(path, ".chum")
+  data = Chump.ChumFile.read!(path)
+  {:ok, sheet} = Chump.Character.create_sheet(name, data)
+  IO.puts sheet.name
+end
