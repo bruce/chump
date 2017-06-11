@@ -7,9 +7,9 @@ Just playing around with Chummer / SR4 files.
 After cloning it:
 
 ``` shell
-$ mix do deps.get
+$ mix do deps.get, deps.compile
 $ mix ecto.setup
-$ iex -S phx.server
+$ iex -S mix phx.server
 ```
 
 Any character sheets in `priv/repo/seeds/sheets` should be loaded.
