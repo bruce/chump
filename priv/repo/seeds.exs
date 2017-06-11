@@ -12,7 +12,8 @@
 
 for path <- Path.wildcard("priv/repo/seeds/sheets/*.chum") do
   name = Path.basename(path, ".chum")
-  data = Chump.ChumFile.read!(path)
-  {:ok, sheet} = Chump.Character.create_sheet(name, data)
-  IO.puts sheet.name
+  {:ok, _} =
+    Chump.ChumFile.read!(path)
+    |> Chump.Character.add_sheet(name)
+  IO.puts name
 end

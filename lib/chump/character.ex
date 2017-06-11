@@ -1,7 +1,7 @@
 defmodule Chump.Character do
   alias __MODULE__
 
-  def create_sheet(name, data) do
+  def add_sheet(data, name) do
     %Character.Sheet{}
     |> Character.Sheet.changeset(
       %{
